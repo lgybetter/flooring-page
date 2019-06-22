@@ -1,0 +1,28 @@
+{
+  "name": "flooring-page",
+  "version": "1.0.0",
+  "description": "flooring page",
+  "main": "index.js",
+  "scripts": {
+    "dev": "parcel ./src/index.html",
+    "build": "parcel build ./src/index.html",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lgybetter/flooring-page.git"
+  },
+  "keywords": [
+    "flooring",
+    "page"
+  ],
+  "author": "lgybetter",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lgybetter/flooring-page/issues"
+  },
+  "homepage": "https://github.com/lgybetter/flooring-page#readme",
+  "devDependencies": {
+    "parcel-bundler": "^1.12.3"
+  }
+}
