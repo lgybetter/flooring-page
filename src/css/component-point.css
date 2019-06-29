@@ -1,0 +1,19 @@
+.point {
+  position: absolute;
+  border-radius: 50%;
+  color: #fff;
+}
+
+.point .name {
+  height: 30px;
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  margin-top: -15px;
+  font-size: 22px;
+}
+
+.point .percent {
+  font-size: .5em;
+}

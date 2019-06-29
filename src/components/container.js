@@ -1,5 +1,6 @@
 import { getUUid } from '../utils';
 import ComponentBase from './component-base';
+import ComponentPoint from './component-point';
 
 const Container = function () {
   this.id = `container-${getUUid()}`;
@@ -19,8 +20,8 @@ const Container = function () {
 
   this.addComponent = function (name, config = {}) {
     config = {
-      ...config,
-      type: 'base'
+      type: 'base',
+      ...config
     };
     let page = this.page.slice(-1)[0];
     let component;
@@ -28,6 +29,8 @@ const Container = function () {
       case 'base':
         component = new ComponentBase(name, config);
         break;
+      case 'point':
+        component = new ComponentPoint(name, config);
       default:
     }
     page.append(component);
@@ -37,13 +40,13 @@ const Container = function () {
   this.loader = function () {
     this.el.fullpage({
       onLeave: function (index, nextIndex, direction) {
-        $(this).find('.container-component').trigger('onLeave');
+        $(this).find('.component').trigger('onLeave');
       },
       afterLoad: function (anchorLink, index) {
-        $(this).find('.container-component').trigger('onLoad');
+        $(this).find('.component').trigger('onLoad');
       }
     })
-    this.page[0].find('.container-component').trigger('onLoad');
+    this.page[0].find('.component').trigger('onLoad');
     this.el.show();
     return this;
   }

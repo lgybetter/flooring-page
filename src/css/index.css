@@ -3,6 +3,6 @@ body {
   margin: 0;
 }
 
-.component {
-  /* display: none; */
-}
+@import './container.css';
+@import './component-base.css';
+@import './component-point.css';
