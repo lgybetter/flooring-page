@@ -15,10 +15,23 @@ const ComponentBase = function (name, config = {}) {
   }) 
 
   component.on('onLoad', function () {
-    console.log('load')
+
+    setTimeout(function () {
+      component.addClass(`${cls}-load`).removeClass(`${cls}-leave`);
+      config.animateIn && component.animate(config.animateIn);
+    }, config.delay || 0);
+
+    return false;
   })
+  
   component.on('onLeave', function () {
-    console.log('live')
+
+    setTimeout(function () {
+      component.addClass(`${cls}-leave`).removeClass(`${cls}-load`);
+      config.animateOut && component.animate(config.animateOut);
+    }, config.delay || 0);
+
+    return false;
   })
   return component;
 }

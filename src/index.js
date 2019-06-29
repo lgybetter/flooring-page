@@ -14,15 +14,14 @@ container.addPage('home')
     height: 300,
     center: true,
     css: {
-      bottom: '20%',
+      bottom: '40%'
     },
-    data: [[
-      'A项', .4, 'green'
-    ], [
-      'B项', .2, 'yellow', 0, '-60%'
-    ], [
-      'C项', .3, 'red', '50%', '-120%'
-    ]]
+    data: [
+      ['A项', .4, 'green'], 
+      ['B项', .2, 'yellow', '60%', '-60%'],
+      ['C项', .25, 'blue', '-50%', '-40%'],
+      ['D项', .3, 'red', '60%', '100%']
+    ]
   })
   .addPage('graph')
   .addComponent('title', {
