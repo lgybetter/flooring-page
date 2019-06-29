@@ -8,7 +8,7 @@ container.addPage('home')
     text: '测试标题'
   })
   .addPage('show')
-  .addComponent('title', {
+  .addComponent('point', {
     type: 'point',
     width: 300,
     height: 300,
@@ -24,7 +24,11 @@ container.addPage('home')
     ]
   })
   .addPage('graph')
-  .addComponent('title', {
-    text: '图形展示'
+  .addComponent('bar', {
+    type: 'bar',
+    width: 530,
+    height: 600,
+    data: [
+    ]
   })
   .loader();
