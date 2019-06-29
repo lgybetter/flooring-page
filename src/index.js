@@ -29,6 +29,15 @@ container.addPage('home')
     width: 530,
     height: 600,
     data: [
-    ]
+      ['A项', .4, '#ff7676'], 
+      ['B项', .2],
+      ['C项', .25 ],
+      ['D项', .3 ],
+      ['E项', .12 ],
+    ],
+    css: {
+      top: 200
+    },
+    center: true
   })
   .loader();

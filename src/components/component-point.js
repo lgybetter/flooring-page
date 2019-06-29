@@ -1,4 +1,3 @@
-import { getUUid } from '../utils';
 import ComponentBase from './component-base';
 
 const ComponentPoint = function (name, config) {
@@ -53,7 +52,6 @@ const ComponentPoint = function (name, config) {
   component.on('onLeave', function () {
     animatOut();
   })
-
   return component;
 }
 

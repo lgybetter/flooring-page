@@ -1,6 +1,7 @@
 import { getUUid } from '../utils';
 import ComponentBase from './component-base';
 import ComponentPoint from './component-point';
+import ComponentBar from './component-bar';
 
 const Container = function () {
   this.id = `container-${getUUid()}`;
@@ -31,6 +32,10 @@ const Container = function () {
         break;
       case 'point':
         component = new ComponentPoint(name, config);
+        break;
+      case 'bar':
+        component = new ComponentBar(name, config);
+        break;
       default:
     }
     page.append(component);

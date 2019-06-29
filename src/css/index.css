@@ -6,3 +6,4 @@ body {
 @import './container.css';
 @import './component-base.css';
 @import './component-point.css';
+@import './component-bar.css';

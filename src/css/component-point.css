@@ -1,4 +1,4 @@
-.point {
+.component-point .point {
   position: absolute;
   border-radius: 50%;
   color: #fff;
@@ -6,7 +6,7 @@
   opacity: 0;
 }
 
-.point .name {
+.component-point .point .name {
   height: 30px;
   width: 100%;
   text-align: center;
@@ -16,16 +16,16 @@
   font-size: 22px;
 }
 
-.point .percent {
+.component-point .point .percent {
   font-size: .5em;
 }
 
-.component-point-load .point {
+.component-point.component-point-load .point {
   opacity: 1;
   transform: scale(1);
 }
 
-.component-point-leave .point {
+.component-point.component-point-leave .point {
   opacity: 0;
   transform: scale(.1);
 }
