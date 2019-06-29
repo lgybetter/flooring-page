@@ -1,13 +1,18 @@
 import './css/index.css';
+import Container from './components/container';
 
-import $ from 'jquery';
-import FullPage from 'fullpage.js';
+const container = new Container();
 
-new FullPage('#h5', {
-  onLeave (origin, { index }, direction) {
-    $('.page').find('.component').eq(index).fadeOut();
-  },
-  afterLoad (origin, { index }, direction) {
-    $('.page').find('.component').eq(index).fadeIn();
-  }
-})
+container.addPage('home')
+  .addComponent('title', {
+    text: '测试标题'
+  })
+  .addPage('show')
+  .addComponent('title', {
+    text: '展示'
+  })
+  .addPage('graph')
+  .addComponent('title', {
+    text: '图形展示'
+  })
+  .loader();
