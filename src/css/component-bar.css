@@ -30,16 +30,15 @@
 }
 
 .component-bar .peer {
-  position: absolute;
-  right: -30px;
   width: 20px;
   color: #ff7676;
   float: left;
   opacity: 0;
+  margin-left: 10px;
 }
 
 .component-bar.component-bar-load .rate .bg {
-  transition: all 1s ease-in-out;
+  transition: all 1s .5s ease-in-out;
   width: 100%;
   border-radius: 3px;
 }
@@ -49,7 +48,7 @@
 }
 
 .component-bar.component-bar-load .peer {
-  transition: all 1s 1s ease-in-out;
+  transition: all 1s 1.5s ease-in-out;
   opacity: 1;
 }
 

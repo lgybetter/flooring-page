@@ -14,7 +14,15 @@ container.addPage('home')
     height: 300,
     center: true,
     css: {
+      bottom: '20%'
+    },
+    animateIn: {
+      opacity: 1,
       bottom: '40%'
+    },
+    animateOut: {
+      opacity: 0,
+      bottom: '20%'
     },
     data: [
       ['A项', .4, 'green'], 
@@ -36,7 +44,16 @@ container.addPage('home')
       ['E项', .12 ],
     ],
     css: {
-      top: 200
+      top: 100,
+      opacity: 0
+    },
+    animateIn: {
+      opacity: 1,
+      top: 200,
+    },
+    animateOut: {
+      opacity: 0,
+      top: 100,
     },
     center: true
   })
