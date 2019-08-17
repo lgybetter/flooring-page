@@ -64,7 +64,8 @@ container.addPage('home')
     height: 400,
     center: true,
     css: {
-      bottom: '40%'
+      bottom: '40%',
+      opacity: 0
     },
     data: [
       ['A项', .4, '#ff7676'], 
@@ -73,5 +74,13 @@ container.addPage('home')
       ['D项', .43 ],
       ['E项', .24 ],
     ],
+    animateIn: {
+      opacity: 1,
+      top: 200,
+    },
+    animateOut: {
+      opacity: 0,
+      top: 100,
+    },
   })
   .loader();

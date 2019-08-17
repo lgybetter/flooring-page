@@ -110,32 +110,35 @@ const ComponentPolyline = function (name, config) {
 
 
   let loadTimer = 0;
-  let LeaveTimer = 0;
-
+  let leaveTimer = 0;
   component.on('onLoad', function () {
     // 折线图动画
-    clearInterval(LeaveTimer);
-    let s = 0;
-    loadTimer = setInterval(function(){
-      if (s >= 1) {
-        clearInterval(loadTimer);
-      }
-      s +=.01;
-      drawLine(s);
-    }, 10);
+    setTimeout(() => {
+      let s = 0;
+      clearInterval(leaveTimer);
+      loadTimer = setInterval(function(){
+        if (s >= 1) {
+          clearInterval(loadTimer);
+        }
+        s +=.01;
+        drawLine(s);
+      }, 10);
+    }, 500);
   })
 
   component.on('onLeave', function () {
     // 折线图动画
     let s = 1;
     clearInterval(loadTimer);
-    LeaveTimer = setInterval(function(){
-      if (s <= 0) {
-        clearInterval(LeaveTimer);
-      }
-      s -=.01;
-      drawLine(s);
-    }, 10);
+    setTimeout(() => {
+      leaveTimer = setInterval(function(){
+        if (s <= 0) {
+          clearInterval(leaveTimer);
+        }
+        s -=.01;
+        drawLine(s);
+      }, 10);
+    }, 500);
   })
 
   component.append(canvas);
