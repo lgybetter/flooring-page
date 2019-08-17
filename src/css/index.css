@@ -7,3 +7,4 @@ body {
 @import './component-base.css';
 @import './component-point.css';
 @import './component-bar.css';
+@import './component-polyline.css';

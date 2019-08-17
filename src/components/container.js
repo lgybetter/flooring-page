@@ -2,6 +2,7 @@ import { getUUid } from '../utils';
 import ComponentBase from './component-base';
 import ComponentPoint from './component-point';
 import ComponentBar from './component-bar';
+import ComponentPolyline from './component-polyline';
 
 const Container = function () {
   this.id = `container-${getUUid()}`;
@@ -35,6 +36,9 @@ const Container = function () {
         break;
       case 'bar':
         component = new ComponentBar(name, config);
+        break;
+      case 'polyline':
+        component = new ComponentPolyline(name, config);
         break;
       default:
     }

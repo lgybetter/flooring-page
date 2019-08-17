@@ -57,4 +57,21 @@ container.addPage('home')
     },
     center: true
   })
+  .addPage('line')
+  .addComponent('polyline', {
+    type: 'polyline',
+    width: 530,
+    height: 400,
+    center: true,
+    css: {
+      bottom: '40%'
+    },
+    data: [
+      ['A项', .4, '#ff7676'], 
+      ['B项', .16],
+      ['C项', .22 ],
+      ['D项', .43 ],
+      ['E项', .24 ],
+    ],
+  })
   .loader();
