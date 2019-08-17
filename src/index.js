@@ -89,14 +89,23 @@ container.addPage('home')
     height: 400,
     center: true,
     data: [
-      ['A项', .4, '#ff7676'], 
-      ['B项', .16],
-      ['C项', .22 ],
-      ['D项', .43 ],
-      ['E项', .24 ],
+      ['A项', .9, '#ff7676'], 
+      ['B项', .8],
+      ['C项', .7 ],
+      ['D项', .6 ],
+      ['E项', .5 ],
     ],
     css: {
-      top: 200
+      top: 100,
+      opacity: 0
+    },
+    animateIn: {
+      opacity: 1,
+      top: 200,
+    },
+    animateOut: {
+      opacity: 0,
+      top: 100,
     }
   })
   .loader();
