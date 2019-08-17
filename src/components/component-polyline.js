@@ -47,6 +47,8 @@ const ComponentPolyline = function (name, config) {
 
   ctx.stroke();
 
+  component.append(canvas);
+
   // 数据折线层
   let lineCanvas = document.createElement('canvas');
   let lineCtx = lineCanvas.getContext('2d');
@@ -141,7 +143,6 @@ const ComponentPolyline = function (name, config) {
     }, 500);
   })
 
-  component.append(canvas);
   
   return component;
 }

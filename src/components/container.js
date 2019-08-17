@@ -3,6 +3,7 @@ import ComponentBase from './component-base';
 import ComponentPoint from './component-point';
 import ComponentBar from './component-bar';
 import ComponentPolyline from './component-polyline';
+import ComponentRadar from './component-radar';
 
 const Container = function () {
   this.id = `container-${getUUid()}`;
@@ -39,6 +40,9 @@ const Container = function () {
         break;
       case 'polyline':
         component = new ComponentPolyline(name, config);
+        break;
+      case 'radar':
+        component = new ComponentRadar(name, config);
         break;
       default:
     }

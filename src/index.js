@@ -82,5 +82,21 @@ container.addPage('home')
       opacity: 0,
       top: 100,
     },
+  }).addPage('radar')
+  .addComponent('radar', {
+    type: 'radar',
+    width: 400,
+    height: 400,
+    center: true,
+    data: [
+      ['A项', .4, '#ff7676'], 
+      ['B项', .16],
+      ['C项', .22 ],
+      ['D项', .43 ],
+      ['E项', .24 ],
+    ],
+    css: {
+      top: 200
+    }
   })
   .loader();
