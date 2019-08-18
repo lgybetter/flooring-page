@@ -107,5 +107,21 @@ container.addPage('home')
       opacity: 0,
       top: 100,
     }
+  }).addPage('pie')
+  .addComponent('pie', {
+    type: 'pie',
+    width: 400,
+    height: 400,
+    center: true,
+    data: [
+      ['A项', .4, '#ff7676'], 
+      ['B项', .2],
+      ['C项', .05 ],
+      ['D项', .2 ],
+      ['E项', .15 ],
+    ],
+    css: {
+      top: 200
+    }
   })
   .loader();

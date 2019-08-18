@@ -124,9 +124,9 @@ const ComponentRadar = function (name, config) {
   let loadTimer = 0;
   let leaveTimer = 0;
   component.on('onLoad', function () {
+    let s = 0;
+    clearInterval(leaveTimer);
     setTimeout(() => {
-      let s = 0;
-      clearInterval(leaveTimer);
       loadTimer = setInterval(function(){
         if (s >= 1) {
           clearInterval(loadTimer);

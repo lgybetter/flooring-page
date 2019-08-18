@@ -4,6 +4,7 @@ import ComponentPoint from './component-point';
 import ComponentBar from './component-bar';
 import ComponentPolyline from './component-polyline';
 import ComponentRadar from './component-radar';
+import ComponentPie from './component-pie';
 
 const Container = function () {
   this.id = `container-${getUUid()}`;
@@ -43,6 +44,9 @@ const Container = function () {
         break;
       case 'radar':
         component = new ComponentRadar(name, config);
+        break;
+      case 'pie':
+        component = new ComponentPie(name, config);
         break;
       default:
     }

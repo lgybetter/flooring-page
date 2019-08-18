@@ -115,9 +115,9 @@ const ComponentPolyline = function (name, config) {
   let leaveTimer = 0;
   component.on('onLoad', function () {
     // 折线图动画
+    let s = 0;
+    clearInterval(leaveTimer);
     setTimeout(() => {
-      let s = 0;
-      clearInterval(leaveTimer);
       loadTimer = setInterval(function(){
         if (s >= 1) {
           clearInterval(loadTimer);
