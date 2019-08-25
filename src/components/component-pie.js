@@ -109,7 +109,7 @@ const ComponentPie = function (name, config) {
     if (per < 0) {
       per = 0;
     } 
-    if (per > 1) {
+    if (per >= 1) {
       per = 1;
     }
     modelCtx.clearRect(0, 0, width, height);
@@ -124,6 +124,9 @@ const ComponentPie = function (name, config) {
     modelCtx.stroke();
 
     if (per >= 1) {
+      component.find('.text').css('transtition', 'all 0s');
+      ComponentPie.reSort(component.find('.text'));
+      component.find('.text').css('transtition', 'all 1s');
       component.find('.text').css('opacity', 1);
     }
     if (per <= 0) {
@@ -164,6 +167,66 @@ const ComponentPie = function (name, config) {
   });
 
   return component;
+}
+
+// 重拍项目文本元素
+ComponentPie.reSort = function (list) {
+  // 1. 检测相交
+  const compare = function (domA, domB) {
+    // 元素的位置，不用 left，因为有时候 left 为 auto
+    let offsetA = $(domA).offset();
+    let offsetB = $(domB).offset();
+
+    // domA 的投影
+    let shadowAX = [offsetA.left,  $(domA).width() + offsetA.left];
+    let shadowAY = [offsetA.top,  $(domA).height() + offsetA.top];
+
+    // domB 的投影
+    let shadowBX = [offsetB.left,  $(domB).width() + offsetB.left];
+    let shadowBY = [offsetB.top,  $(domB).height() + offsetB.top];
+
+    // 检测 x
+    let inspectX = 
+      (shadowAX[0] > shadowBX[0] && shadowAX[0] < shadowBX[1]) ||
+      (shadowAX[1] > shadowBX[0] && shadowAX[1] < shadowBX[1])
+
+    // 检测 y
+    let inspectY = 
+      (shadowAY[0] > shadowBY[0] && shadowAY[0] < shadowBY[1]) ||
+      (shadowAY[1] > shadowBY[0] && shadowAY[1] < shadowBY[1])
+
+    return inspectX && inspectY;
+  }
+
+  // 2. 错开重排
+  const reset = function (domA, domB) {
+
+    if ($(domA).css('top') !== 'auto') {
+
+      $(domA).css('top', parseInt($(domA).css('top')) + $(domB).height())
+    }
+
+    if ($(domA).css('buttom') !== 'auto') {
+
+      $(domA).css('buttom', parseInt($(domA).css('top')) + $(domB).height())
+    }
+
+  }
+
+  for (let i = 0; i < list.length; i++) {
+    let compareIndex = (i + 1) % list.length;
+    if (compareIndex === 0) {
+      if(compare(list[i], list[compareIndex])) {
+        reset(list[i], list[compareIndex]);
+      }
+      return;
+    }
+    for (let k = compareIndex; k < list.length; k++) {
+      if (compare(list[i], list[k])) {
+        reset(list[i], list[k]);
+      }
+    } 
+  }
 }
 
 export default ComponentPie;

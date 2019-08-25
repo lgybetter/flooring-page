@@ -54,7 +54,7 @@ const Container = function () {
     return this;
   }
 
-  this.loader = function () {
+  this.loader = function (page) {
     this.el.fullpage({
       onLeave: function (index, nextIndex, direction) {
         $(this).find('.component').trigger('onLeave');
@@ -65,6 +65,9 @@ const Container = function () {
     })
     this.page[0].find('.component').trigger('onLoad');
     this.el.show();
+    if (page) {
+      this.el.fullpage.moveTo(page)
+    }
     return this;
   }
 }
